@@ -210,7 +210,7 @@ const Cart = () => {
           }}
         >
           <p>Total Items : {totalItemState} </p>
-          <p>Total Price : {totalPrice}</p>
+          <p>Total Price : {totalPrice.toFixed(2)}</p>
         </div>
       </div>
 

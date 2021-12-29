@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./navbar.module.css";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SvgIcon from "@mui/material/SvgIcon";
+import { CartContext } from "../Context/CartContext";
+import { useContext } from "react";
 
 function HomeIcon(props) {
   return (
@@ -13,6 +15,8 @@ function HomeIcon(props) {
 }
 
 const Navbar = () => {
+  var [cartItems, setCartItems] = useContext(CartContext);
+
   return (
     <>
       <div className={styles.navBarContainer}>
@@ -41,7 +45,12 @@ const Navbar = () => {
             Search
           </Link>
           <Link to="cart" className={styles.link}>
-            <ShoppingCartIcon />
+            <div>
+              <div>{cartItems.length}</div>
+              <div>
+                <ShoppingCartIcon />
+              </div>
+            </div>
           </Link>
         </div>
       </div>
