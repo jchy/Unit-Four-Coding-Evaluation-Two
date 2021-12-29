@@ -7,7 +7,7 @@ import styless from "./pages.module.css";
 const handlePostFetchProduct = (data) => {
   const config = {
     method: "post",
-    url: "https://dynamic-route-server-products.herokuapp.com/products",
+    url: "https://new-app-for-evaluation.herokuapp.com/posts",
     data: data
   };
   return axios(config);
@@ -44,7 +44,7 @@ const Admin = () => {
           marginTop: "50px",
           padding: "20px",
           borderRadius: "20px",
-          background:"whitesmoke"
+          background: "whitesmoke"
         }}
         onSubmit={handleSubmit}
       >
@@ -127,8 +127,18 @@ const Admin = () => {
         </div>
       </form>
 
-      <div style={{ display: "flex", color: "gray", fontSize: "14px", gap:"2rem", paddingLeft: "50px", paddingRight: "50px", marginTop:"100px"}}>
-        <div style={{textAlign:"left"}}>
+      <div
+        style={{
+          display: "flex",
+          color: "gray",
+          fontSize: "14px",
+          gap: "2rem",
+          paddingLeft: "50px",
+          paddingRight: "50px",
+          marginTop: "100px"
+        }}
+      >
+        <div style={{ textAlign: "left" }}>
           <h4>Australia's no.1 destination for tech & design</h4>
           <p>
             Founded on the principal that good design should be seamless and
@@ -138,7 +148,7 @@ const Admin = () => {
           </p>
         </div>
 
-        <div style={{textAlign:"left"}}>
+        <div style={{ textAlign: "left" }}>
           <h4>Studio Proper</h4>
           <p>
             Verified Customer Reviews Apple Authorised Reseller Buy Now Pay
@@ -147,7 +157,7 @@ const Admin = () => {
           </p>
         </div>
 
-        <div style={{textAlign:"left"}}>
+        <div style={{ textAlign: "left" }}>
           <h4>Journal</h4>
           <p>
             All Articles BEST CHRISTMAS GIFT IDEAS FOR TECH LOVERS 2021 DogTag
@@ -158,18 +168,23 @@ const Admin = () => {
           </p>
         </div>
       </div>
-        <div style={{textAlign:"left", marginLeft:"50px"}}>
-          <h4>Newsletter</h4>
-          <p>Subscribe to receive updates, access to exclusive deals, and more.</p>
-          <input type="text" placeholder="Enter your email address" style={{padding:"10px", width:"300px", height:"30px"}}/>
-        </div>
-        <div style={{textAlign:"left", marginLeft:"50px", marginTop:"20px"}}>
-          <button className={styless.homeBtn}>SUBSCRIBE</button>
-        </div>
-        <div>
-          <h4>@STUDIO PROPER</h4>
-        </div>
-
+      <div style={{ textAlign: "left", marginLeft: "50px" }}>
+        <h4>Newsletter</h4>
+        <p>
+          Subscribe to receive updates, access to exclusive deals, and more.
+        </p>
+        <input
+          type="text"
+          placeholder="Enter your email address"
+          style={{ padding: "10px", width: "300px", height: "30px" }}
+        />
+      </div>
+      <div style={{ textAlign: "left", marginLeft: "50px", marginTop: "20px" }}>
+        <button className={styless.homeBtn}>SUBSCRIBE</button>
+      </div>
+      <div>
+        <h4>@STUDIO PROPER</h4>
+      </div>
     </div>
   );
 };
