@@ -7,9 +7,7 @@ import { CartContext } from "../Context/CartContext";
 import { useContext } from "react";
 
 const fetchProducts = () => {
-  return axios.get(
-    "https://dynamic-route-server-products.herokuapp.com/products"
-  );
+  return axios.get("https://new-app-for-evaluation.herokuapp.com/posts");
 };
 
 var addedToCartItems = [];
@@ -34,7 +32,7 @@ const Cart = () => {
       var i = 0;
       data.map((cartItem) => {
         while (cartItem.id === cartItems[i]) {
-          totalPrice += cartItem.price;
+          totalPrice += Number(cartItem.price);
           i++;
         }
       });
@@ -77,7 +75,7 @@ const Cart = () => {
     if (cartItemDeatil[key] > 0) {
       cartItemDeatil[key] -= 1;
       totalItems -= 1;
-      totalPrice -= price;
+      totalPrice -= Number(price);
       setTotalItemState(totalItems);
       setTotalPrice(totalPrice);
     }
@@ -89,7 +87,7 @@ const Cart = () => {
     console.log("fq2", itemFrequency);
     cartItemDeatil[key] += 1;
     totalItems += 1;
-    totalPrice += price;
+    totalPrice += Number(price);
     setTotalItemState(totalItems);
     setTotalPrice(totalPrice);
     setItemFrequency({ ...itemFrequency, ...cartItemDeatil });
@@ -106,7 +104,7 @@ const Cart = () => {
       <div style={{ display: "flex" }}>
         <div
           style={{
-            margin: "30px",
+            margin: "30px"
           }}
         >
           {addedToCartItems?.map((item) => {
@@ -121,12 +119,12 @@ const Cart = () => {
                     padding: "20px",
                     display: "flex",
                     marginBottom: "30px",
-                    marginLeft: "50px",
+                    marginLeft: "50px"
                   }}
                 >
                   <div>
                     <img
-                      src={item.url}
+                      src={item.image}
                       alt=""
                       width="200px"
                       height="200px"
@@ -138,7 +136,7 @@ const Cart = () => {
                       marginTop: "50px",
                       textAlign: "left",
                       paddingLeft: "20px",
-                      lineHeight: "30px",
+                      lineHeight: "30px"
                     }}
                   >
                     <p>Product Name : {item.name}</p>
@@ -155,7 +153,7 @@ const Cart = () => {
                           fontSize: "24px",
                           cursor: "pointer",
                           fontWeight: "900",
-                          marginRight: "30px",
+                          marginRight: "30px"
                         }}
                         onClick={() => handleItemRemoval(item.id, item.price)}
                       >
@@ -168,7 +166,7 @@ const Cart = () => {
                           borderRadius: "50%",
                           fontSize: "24px",
                           cursor: "pointer",
-                          fontWeight: "900",
+                          fontWeight: "900"
                         }}
                         onClick={() => handleItemAddition(item.id, item.price)}
                       >
@@ -183,7 +181,7 @@ const Cart = () => {
                         fontSize: "16px",
                         color: "blue",
                         borderRadius: "10px",
-                        cursor: "pointer",
+                        cursor: "pointer"
                       }}
                     >
                       Show More Info
@@ -203,7 +201,7 @@ const Cart = () => {
             border: "1px solid gray",
             padding: "30px",
             background: "cornsilk",
-            borderRadius: "10px",
+            borderRadius: "10px"
           }}
         >
           <p>Total Items : {totalItemState} </p>
@@ -219,7 +217,7 @@ const Cart = () => {
           gap: "2rem",
           paddingLeft: "50px",
           paddingRight: "50px",
-          marginTop: "100px",
+          marginTop: "100px"
         }}
       >
         <div style={{ textAlign: "left" }}>

@@ -3,13 +3,11 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "../Components/navbar.module.css";
 import styless from "./pages.module.css";
-import {CartContext} from "../Context/CartContext";
+import { CartContext } from "../Context/CartContext";
 import { useContext } from "react";
 
 const fetchProducts = () => {
-  return axios.get(
-    "https://dynamic-route-server-products.herokuapp.com/products"
-  );
+  return axios.get("https://new-app-for-evaluation.herokuapp.com/posts");
 };
 
 const Products = () => {
@@ -33,16 +31,17 @@ const Products = () => {
   }, []);
 
   const handleCart = (id) => {
-    setCartItems([...cartItems,id]);
+    alert("Adding this item to your cart");
+    setCartItems([...cartItems, id]);
     console.log(cartItems);
-  }
+  };
 
   if (isLoading) {
     return <div>...loading</div>;
   }
   return (
     <div>
-      <h2 className={styles.welcomeMsg} style={{margin:"30px"}}>
+      <h2 className={styles.welcomeMsg} style={{ margin: "30px" }}>
         Purchase our Genuine & Brand new Products
       </h2>
       <div
@@ -63,14 +62,14 @@ const Products = () => {
               <div
                 style={{
                   border: "1px solid gray",
-                  background:"black",
-                  color:"white",
+                  background: "black",
+                  color: "white",
                   borderRadius: "10px",
                   padding: "20px"
                 }}
               >
                 <img
-                  src={item.url}
+                  src={item.image}
                   alt=""
                   width="200px"
                   height="200px"
@@ -79,16 +78,29 @@ const Products = () => {
                 <div>
                   <p style={{ color: "white" }}>{item.name}</p>
                   <div>
-                     <button style={{ border: "1px solid white", width: "90px",height: "24px",marginBottom:"7px", cursor: "pointer",marginTop:"7px",borderRadius:"10px" }} onClick={()=>handleCart(item.id)}>Add to Cart</button>
+                    <button
+                      style={{
+                        border: "1px solid white",
+                        width: "90px",
+                        height: "24px",
+                        marginBottom: "7px",
+                        cursor: "pointer",
+                        marginTop: "7px",
+                        borderRadius: "10px"
+                      }}
+                      onClick={() => handleCart(item.id)}
+                    >
+                      Add to Cart
+                    </button>
                   </div>
                   <Link
                     to={`/products/${item.id}`}
                     className={styles.link}
                     style={{
                       fontSize: "16px",
-                      color:"turquoise",
+                      color: "turquoise",
                       borderRadius: "10px",
-                      cursor:"pointer"
+                      cursor: "pointer"
                     }}
                   >
                     Show More Info
@@ -100,11 +112,18 @@ const Products = () => {
         })}
       </div>
 
-
-    
-     
-      <div style={{ display: "flex", color: "gray", fontSize: "14px", gap:"2rem", paddingLeft: "50px", paddingRight: "50px", marginTop: "100px" }}>
-        <div style={{textAlign:"left"}}>
+      <div
+        style={{
+          display: "flex",
+          color: "gray",
+          fontSize: "14px",
+          gap: "2rem",
+          paddingLeft: "50px",
+          paddingRight: "50px",
+          marginTop: "100px"
+        }}
+      >
+        <div style={{ textAlign: "left" }}>
           <h4>Australia's no.1 destination for tech & design</h4>
           <p>
             Founded on the principal that good design should be seamless and
@@ -114,7 +133,7 @@ const Products = () => {
           </p>
         </div>
 
-        <div style={{textAlign:"left"}}>
+        <div style={{ textAlign: "left" }}>
           <h4>Studio Proper</h4>
           <p>
             Verified Customer Reviews Apple Authorised Reseller Buy Now Pay
@@ -123,7 +142,7 @@ const Products = () => {
           </p>
         </div>
 
-        <div style={{textAlign:"left"}}>
+        <div style={{ textAlign: "left" }}>
           <h4>Journal</h4>
           <p>
             All Articles BEST CHRISTMAS GIFT IDEAS FOR TECH LOVERS 2021 DogTag
@@ -134,17 +153,23 @@ const Products = () => {
           </p>
         </div>
       </div>
-        <div style={{textAlign:"left", marginLeft:"50px"}}>
-          <h4>Newsletter</h4>
-          <p>Subscribe to receive updates, access to exclusive deals, and more.</p>
-          <input type="text" placeholder="Enter your email address" style={{padding:"10px", width:"300px", height:"30px"}}/>
-        </div>
-        <div style={{textAlign:"left", marginLeft:"50px", marginTop:"20px"}}>
-          <button className={styless.homeBtn}>SUBSCRIBE</button>
-        </div>
-        <div>
-          <h4>@STUDIO PROPER</h4>
-        </div>
+      <div style={{ textAlign: "left", marginLeft: "50px" }}>
+        <h4>Newsletter</h4>
+        <p>
+          Subscribe to receive updates, access to exclusive deals, and more.
+        </p>
+        <input
+          type="text"
+          placeholder="Enter your email address"
+          style={{ padding: "10px", width: "300px", height: "30px" }}
+        />
+      </div>
+      <div style={{ textAlign: "left", marginLeft: "50px", marginTop: "20px" }}>
+        <button className={styless.homeBtn}>SUBSCRIBE</button>
+      </div>
+      <div>
+        <h4>@STUDIO PROPER</h4>
+      </div>
     </div>
   );
 };

@@ -8,7 +8,7 @@ import ProductCard from "../Components/ProductCard";
 const getProductById = (id) => {
   const config = {
     method: "get",
-    url: `https://dynamic-route-server-products.herokuapp.com/products/${id}`
+    url: `https://new-app-for-evaluation.herokuapp.com/posts/${id}`
   };
   return axios(config);
 };
@@ -53,7 +53,7 @@ const ProductDetails = () => {
           id={id}
           name={`${data.name}`}
           price={`${data.price}`}
-          url={`${data.url}`}
+          url={`${data.image}`}
         />
       </div>
     </>
