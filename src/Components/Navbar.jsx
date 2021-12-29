@@ -25,7 +25,7 @@ const Navbar = () => {
             <img src="/images/logo.png" alt="" className={styles.logo} />
           </Link>
           <Link to="/" className={styles.link}>
-            <HomeIcon />
+            <HomeIcon style={{ fontSize: "40px" }} />
           </Link>
           <Link to="/products" className={styles.link}>
             Products
@@ -48,7 +48,7 @@ const Navbar = () => {
             <div>
               <div>{cartItems.length}</div>
               <div>
-                <ShoppingCartIcon />
+                <ShoppingCartIcon style={{ fontSize: "40px" }} />
               </div>
             </div>
           </Link>
