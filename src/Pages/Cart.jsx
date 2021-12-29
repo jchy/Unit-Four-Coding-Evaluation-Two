@@ -168,7 +168,12 @@ const Cart = () => {
                           cursor: "pointer",
                           fontWeight: "900"
                         }}
-                        onClick={() => handleItemAddition(item.id, item.price)}
+                        onClick={() =>
+                          handleItemAddition(
+                            item.id,
+                            Number(item.price).toFixed(2)
+                          )
+                        }
                       >
                         ➕
                       </button>
