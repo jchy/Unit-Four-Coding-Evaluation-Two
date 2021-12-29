@@ -1,0 +1,27 @@
+.homeBgImg{
+    height:500px;
+    width:100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.homeBtn{
+    font-size:12px;
+    font-weight:700;
+    color:white;
+    background-color: rgb(1,113,226);
+    height:40px;
+    width:200px;
+    border: 0px solid rgb(1,113,226);
+    cursor: pointer;
+}
+.viewBtn{
+    font-size:12px;
+    font-weight:700;
+    color:white;
+    background-color: rgb(1,113,226);
+    height:40px;
+    width:200px;
+    border: 0px solid rgb(1,113,226);
+    cursor: pointer;
+    margin:50px;
+}

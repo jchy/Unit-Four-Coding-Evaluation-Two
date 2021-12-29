@@ -1,0 +1,34 @@
+.navBarContainer{
+  display: flex;
+  background-color:white;
+  justify-content: left;
+}
+
+.navbar{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  border-bottom: 1px solid gray;
+  padding:10px;
+}
+.navbarTwo{
+  display: flex;
+  justify-content: right;
+  gap: 2rem;
+  border-bottom: 1px solid gray;
+  padding:10px;
+  width:100%;
+}
+.logo{
+  height:20px;
+  width:80px;
+}
+
+.link{
+  text-decoration: none;
+  font-size:13px;
+  font-size: "Montserrat, sans-serif";
+  font-weight: 700;
+  color:black;
+  padding-top: 5px;
+}
